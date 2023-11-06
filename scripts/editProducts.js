@@ -1,92 +1,43 @@
 import { inventory } from "./products.js";
+import { listProducts } from "./listProducts.js";
 import { totalInventario } from "./totalInventario.js";
 
-const showEditForm = (product) => {
-  // Obtén los elementos del formulario de edición
-  const productNameInput = document.getElementById('product-name');
-  const productQuantityInput = document.getElementById('product-quantity');
-  const productPriceInput = document.getElementById('product-price');
-  const confirmEditButton = document.querySelector('.btn-agregar-confirmar button[type="submit"]');
+export const editProduct = (productId) => {
+  const product = inventory.find((item) => item.id === productId);
 
-  // Llena el formulario con los datos del producto seleccionado
-  productNameInput.value = product.nombre;
-  productQuantityInput.value = product.cantidad;
-  productPriceInput.value = product.precio;
+  if (product) {
+    //Obtener los campos del formulario
+    const productNameInput = document.getElementById("product-name");
+    const productQuantityInput = document.getElementById("product-quantity");
+    const productPriceInput = document.getElementById("product-price");
 
-  // Cambia el texto del botón a "Confirmar edición"
-  confirmEditButton.textContent = "Confirmar edición";
+    //Rellenar los campos con los datos del producto
+    productNameInput.value = product.nombre;
+    productQuantityInput.value = product.cantidad;
+    productPriceInput.value = product.precio;
 
-  // Agrega un controlador de eventos para confirmar la edición
-  confirmEditButton.addEventListener("click", () => {
-    confirmEdit(product);
-  });
-};
-
-const confirmEdit = (product) => {
-  const productName = document.getElementById('product-name').value;
-  const productQuantity = parseInt(document.getElementById('product-quantity').value);
-  const productPrice = parseFloat(document.getElementById('product-price').value);
-
-  if (productName && !isNaN(productQuantity) && !isNaN(productPrice)) {
-    // Actualiza los datos del producto
-    product.nombre = productName;
-    product.cantidad = productQuantity;
-    product.precio = productPrice;
-
-    // Restablece el formulario
+    //Agregar un evento de envío de formulario para actualizar
     const productForm = document.getElementById("product-form-events");
-    productForm.reset();
+    productForm.onsubmit = function (e) {
+      e.preventDefault();
 
-    // Cambia el texto del botón de confirmación a "Agregar producto"
-    const confirmEditButton = document.querySelector('.btn-agregar-confirmar button[type="submit"]');
-    confirmEditButton.textContent = "Agregar producto";
+      //Actualizar el producto con los nuevos datos
 
-    // Actualiza la tabla
-    cleanTable.innerHTML = "";
-    listProducts();
+      product.nombre = productNameInput.value;
+      product.cantidad = parseInt(productQuantityInput.value);
+      product.precio = parseFloat(productPriceInput.value);
+
+      //Limpiar la tabla y volver a listar los productos
+
+      const cleanTable = document.getElementById("clear-table");
+      cleanTable.innerHTML = "";
+      listProducts();
+
+      //Devolvemos el nombre del botón y reseteamos los campos
+      productNameInput.value = "";
+      productQuantityInput.value = "";
+      productPriceInput.value = "";
+      totalInventario();
+    };
   }
 };
-
-
-
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   const editProductForm = document.getElementById("edit-product-form");
-//   const editProductId = document.getElementById("edit-product-id");
-//   const editProductName = document.getElementById("edit-product-name");
-//   const editProductQuantity = document.getElementById("edit-product-quantity");
-//   const editProductPrice = document.getElementById("edit-product-price");
-
-//   const datosURL = new URLSearchParams(window.location.search);
-//   const productId = parseInt(datosURL.get("id"));
-//   const product = inventory.find((item) => item.id === productId);
-
-//   if (!product) {
-//     alert("Producto no encontrado, se le ridigirá a la página principal");
-//     window.location.href = `index.html`;
-//   } else {
-//     editProductId.value = product.id;
-//     editProductName.value = product.nombre;
-//     editProductQuantity.value = product.cantidad;
-//     editProductPrice.value = product.precio;
-//   }
-//   editProductForm.addEventListener("submit", (e) => {
-//     e.preventDefault();
-//   });
-//   const saves = document.getElementById("saves");
-//   saves.addEventListener("click", () => {
-//     const updatedProduct = {
-//       id: product.id,
-//       nombre: editProductName.value,
-//       cantidad: parseInt(editProductQuantity.value),
-//       precio: parseFloat(editProductPrice.value),
-//     };
-//     const index = inventory.findIndex((item) => item.id === productId);
-
-//     if (index !== -1) {
-//       inventory[index] = updatedProduct;
-//       // Redirigir a la página de índice después de guardar los cambios
-//       window.location.href = "index.html";
-//     }
-//   });
-// });

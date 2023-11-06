@@ -4,19 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gestor de invenario</title>
-    <!-- <base href="/" /> -->
     <link rel="stylesheet" href="/styles/style.css" />
   </head>
   <body>
     <header>
       <button class="btnMode" id="btnMode">
         <!-- modo oscuro -->
-      &#128123;
+        &#128123;
       </button>
       <div class="encabezado">
-        <h1>RetroGames.bit <br>Gestión de inventario </h1>
+        <h1>RetroGames.bit <br />Gestión de inventario</h1>
       </div>
-      <div class="btn" id="btnTotal">Total inventario <span id="valorTotal"></span></div>
+      <div class="total" id="btnTotal">
+        Total inventario <span id="valorTotal"></span>
+      </div>
     </header>
 
     <div class="container">
@@ -30,7 +31,9 @@
           <input type="number" step="0.01" id="product-price" required />
           <div class="btn-agregar-confirmar">
             <button class="btn" type="submit">Agregar producto</button>
-            <button class="btn" type="submit">Confirmar edicion</button>
+            <button class="btn" id="btnEdit" type="submit">
+              Confirmar edicion
+            </button>
           </div>
         </form>
       </div>

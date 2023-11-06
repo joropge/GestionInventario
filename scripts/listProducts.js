@@ -1,9 +1,8 @@
 import { inventory } from "./products.js";
 import { totalInventario } from "./totalInventario.js";
-
+import { editProduct } from "./editProducts.js";
 
 export const listProducts = () => {
-  
   const cleanTable = document.getElementById("clear-table");
   inventory.forEach((item) => {
     const row = cleanTable.insertRow();
@@ -12,9 +11,6 @@ export const listProducts = () => {
     const cell2 = row.insertCell(1);
     const cell3 = row.insertCell(2);
     const cell4 = row.insertCell(3);
-    
-
-
 
     cell1.innerHTML = item.nombre;
 
@@ -22,14 +18,12 @@ export const listProducts = () => {
 
     cell3.innerHTML = item.precio;
 
-
     const deleteBtn = document.createElement("button");
     deleteBtn.classList.add("btn");
     deleteBtn.innerText = "Delete";
     deleteBtn.addEventListener("click", () => {
-      if (confirm(`¿Estás seguro que deseas borrar "${item.nombre}"?`)) 
-      {
-        const index = inventory.findIndex(product => product.id === item.id)
+      if (confirm(`¿Estás seguro que deseas borrar "${item.nombre}"?`)) {
+        const index = inventory.findIndex((product) => product.id === item.id);
 
         if (index !== -1) {
           inventory.splice(index, 1);
@@ -46,11 +40,8 @@ export const listProducts = () => {
     editBtn.classList.add("btn");
     editBtn.innerText = "Edit";
     editBtn.addEventListener("click", () => {
-      // showEditForm(item)
-      //
-      window.location.href = `/templates/editProducts.html?id=${item.id}`;
+      editProduct(item.id);
     });
     cell4.appendChild(editBtn); //con este boton se editará
-
   });
 };

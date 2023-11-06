@@ -2,7 +2,6 @@ import { listProducts } from "./listProducts.js";
 import { insertProducts } from "./insertProducts.js";
 import { totalInventario } from "./totalInventario.js";
 
-
 /**
  * Autor: Jorge Ordiz Perez(estudiante)
  * GitHub:
@@ -38,4 +37,4 @@ document.addEventListener("DOMContentLoaded", () => {
   //   totalInventario();
   // });
 });
-document.addEventListener("DOMContentLoaded",totalInventario);
+document.addEventListener("DOMContentLoaded", totalInventario);

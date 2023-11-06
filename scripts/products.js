@@ -6,7 +6,7 @@ const getRandomQuantity = () =>{
 
 }
 const inventory = [
-    { id: 1, nombre: "The Witcher 3: Wild Hunt", cantidad: 10, precio: 79.95 + "€" },
+    { id: 1, nombre: "The Witcher 3: Wild Hunt", cantidad: getRandomQuantity(), precio: 79.95 + "€" },
     { id: 2, nombre: "The Legend of Zelda: Breath of the Wild", cantidad: getRandomQuantity(), precio: 59.99 + "€" },
     { id: 3, nombre: "Mass Effect: Legendary Edition", cantidad: getRandomQuantity(), precio: 69.99 + "€" },
     { id: 4, nombre: "Call of Duty: Modern Warfare", cantidad: getRandomQuantity(), precio: 49.99 + "€" },
