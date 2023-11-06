@@ -2,72 +2,206 @@
     font-family: 'Pixel';
     src: url('/assets/fonts/Pixel/PixelifySans-Regular.ttf') format('truetype');
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 h1 {
     font-family: 'Pixel';
+    color: rgb(2, 2, 2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
-    color:rgb(0, 255, 64);
+
 }
 
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(0, 16, 96);
-    background: radial-gradient(circle, rgba(0, 16, 96,1) 0%, rgba(0, 0, 0,1) 100%);
+.encabezado {
+    position: absolute;
+    left: 50%;
+    translate: -50%;
 }
 
-.inventory-table-styles{
+.container {
+    padding-top: 100px;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0 30px;
+    width: 100%;
+    background-color: rgb(158, 125, 189);
+}
+
+.agergar {
+    padding-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+.btn-agregar-confirmar {
+    display: flex;
+    text-align: left;
+    justify-content: center;
+}
+
+.inventory-table-styles {
     border-collapse: collapse;
     width: 80%;
     margin: 20px auto;
-    color: white;
+    color: rgb(7, 7, 7);
 }
 
 .inventory-table-styles th,
-.inventory-table-styles td{
-    border:1px solid #cccccc;
+.inventory-table-styles td {
+    border: 1px solid #cccccc;
     padding: 8px;
     text-align: center;
 }
-.inventory-table-styles tr:hover{
-    background-color: #000000;
-    color:rgb(181, 78, 78);
-    
-}
-/*Estilos para el formulario con fondo negro*/
-.product-form-styles{
-    background-color: black;
-    color:white;
-    padding: 20px;
-    border:1px solid #333;
-    border-radius: 20px;
-    margin: 20px;
-    box-shadow: 0 2px 40px rgb(78, 77, 77);
-}
-/*Estilos para las etiquetas y campos de entrada*/
-label{
-    display: block;
-    margin-bottom: 10px;
+
+.inventory-table-styles tr:hover {
+    background-color: rgba(132, 0, 255, 0.116);
+
 }
 
-input{
-    width: 97%;
+/*Estilos para el formulario con fondo negro*/
+.product-form-styles {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 2px 40px rgb(132, 0, 255);
+}
+
+/*Estilos para las etiquetas y campos de entrada*/
+
+img {
+    width: 45px;
+}
+
+
+input {
+    width: 150px;
     padding: 10px;
     margin-bottom: 15px;
-    border:1px solid #333;
+    border: 1px solid #333;
     border-radius: 10px;
     background-color: black;
     color: wheat;
     outline: none;
 }
 
-button{
+.btn {
     margin: 2% 2% 2% 2%;
-    background-color: #3523b8;
-    color:white;
+    background-color: rgba(132, 0, 255, 0.603);
+    color: white;
     padding: 10px 20px;
-    border:none;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.2s ease;
-    
-    &:hover{background-color:#645d98;}
+
+    &:hover {
+        background-color: #645d98;
+    }
+}
+
+/*DARK-MODE*/
+
+
+.btnMode {
+    font-size: 50px;
+    border: none;
+    cursor: pointer;
+    border-radius: 100px;
+    background: transparent;
+    /* Relleno transparente */
+
+    &:hover {
+        animation: bounce 0.5s linear;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(-10px);
+    }
+    40% {
+        transform: translateY(10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+    80% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+body.dark-mode {
+    background-color: #333;
+    /* Fondo oscuro */
+    color: #fff;
+    /* Texto blanco */
+
+}
+
+header.dark-mode {
+    background-color: rgb(163, 20, 182);
+}
+
+h1.dark-mode {
+    font-family: 'Pixel';
+    color: rgb(0, 255, 64);
+}
+
+table.dark-mode {
+    color: aliceblue;
+}
+
+.dark-mode .btn {
+    margin: 2% 2% 2% 2%;
+    background-color: rgb(0, 255, 64);
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: #1b9662;
+    }
+}
+
+.dark-mode .product-form-styles {
+
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 2px 40px rgb(0, 255, 64);
+}
+
+.dark-mode .inventory-table-styles tr:hover {
+    background-color: rgba(0, 255, 34, 0.116);
+
 }

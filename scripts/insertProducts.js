@@ -1,5 +1,7 @@
 import { inventory } from "./products.js";
 import { listProducts } from "./listProducts.js";
+import { totalInventario } from "./totalInventario.js";
+
 
 export const insertProducts = () => {
     let nextId = inventory.length + 1 // Inicializa el contador de ID
@@ -35,6 +37,7 @@ export const insertProducts = () => {
             cleanTable.innerHTML = "";
 
             listProducts()
+            totalInventario();
         }
 
     });
