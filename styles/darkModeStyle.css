@@ -84,3 +84,8 @@ table.dark-mode {
     background-color: rgba(0, 255, 34, 0.116);
 
 }
+
+.dark-mode .total {
+    color:black
+
+}

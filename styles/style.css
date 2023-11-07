@@ -45,7 +45,8 @@ h1 {
 }
 
 .total {
-    background-color: #fdfdfd77;
+    background: rgb(192, 144, 238);
+    background: linear-gradient(190deg, rgba(192, 144, 238, 1) 0%, rgba(253, 253, 253, 1) 100%);
     border-radius: 5px;
     height: 50px;
     display: flex;
@@ -54,6 +55,7 @@ h1 {
     align-items: center;
     padding: 30px;
     gap: 10px;
+
 }
 
 .container {
@@ -67,10 +69,8 @@ header {
     justify-content: space-between;
     gap: 10px;
     width: 100%;
-    background-color: rgb(192, 144, 238);
+    background-color: #c090ee;
     padding: 10px;
-
-    /* background-color: rgb(158, 125, 189); */
 }
 
 .agergar {
@@ -81,6 +81,7 @@ header {
     justify-content: center;
     text-align: center;
 }
+
 /*Botones*/
 .btn-agregar-confirmar {
     display: flex;
@@ -97,7 +98,9 @@ header {
 
 .btn {
     margin: 2% 2% 2% 2%;
-    background-color: rgba(132, 0, 255, 0.603);
+    background-color: #8400ff9a;
+
+
     color: white;
     padding: 10px 20px;
     border: none;
@@ -109,6 +112,8 @@ header {
         background-color: #645d98;
     }
 }
+
+
 
 /*estilos de la tabla*/
 .inventory-table-styles {
