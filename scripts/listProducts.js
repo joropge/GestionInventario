@@ -34,14 +34,15 @@ export const listProducts = () => {
 
       listProducts();
     });
-    cell4.appendChild(deleteBtn); //con esta linea estamos insertando el boton delete en la celda correspondiente
+    cell4.appendChild(deleteBtn);
 
     const editBtn = document.createElement("button");
     editBtn.classList.add("btn");
     editBtn.innerText = "Edit";
     editBtn.addEventListener("click", () => {
+      window.scrollTo(0, 0);
       editProduct(item.id);
     });
-    cell4.appendChild(editBtn); //con este boton se editará
+    cell4.appendChild(editBtn);
   });
 };

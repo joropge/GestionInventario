@@ -25,6 +25,32 @@ h1 {
     left: 50%;
     translate: -50%;
 }
+
+.input-search{ 
+    background-color:transparent;
+    width: 200px;
+    border: 1px solid #333;
+    color: whitesmoke;
+
+}
+.btnSearch{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.search{
+    position: absolute;
+    left: 20%;
+    top: 20px;
+    translate: -50%;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    
+
+}
 .total{
    background-color: #fdfdfd77;
    border-radius: 5px;
@@ -47,9 +73,10 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-    padding: 0 30px;
     width: 100%;
-    background-color: rgba(132, 0, 255, 0.473);;
+    background-color: rgb(192, 144, 238);
+    padding: 10px;
+
     /* background-color: rgb(158, 125, 189); */
 }
 
@@ -174,6 +201,7 @@ body.dark-mode {
 
 header.dark-mode {
     background-color: rgb(163, 20, 182);
+    padding: 10px;
 }
 
 h1.dark-mode {
@@ -213,4 +241,8 @@ table.dark-mode {
 .dark-mode .inventory-table-styles tr:hover {
     background-color: rgba(0, 255, 34, 0.116);
 
+}
+
+.found{
+    background-color: rgb(192, 144, 238);
 }

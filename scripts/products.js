@@ -2,7 +2,7 @@
 export {inventory};
 
 const getRandomQuantity = () =>{
-    return Math.floor(Math.random()*30)+1;
+    return Math.floor(Math.random()*50)+1;
 
 }
 const inventory = [
