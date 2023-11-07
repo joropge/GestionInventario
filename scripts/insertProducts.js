@@ -23,13 +23,13 @@ export const insertProducts = () => {
         cantidad: productQuantity,
         precio: productPrice,
       };
-      //Agregar el nuevo producto al inventario
+      //Agregar producto al inventario
       inventory.push(newProduct);
       nextId++;
 
       //limpiar los campos del formulario
       productForm.reset();
-      //limpiar la tabla antes de la nueva inserción
+      //limpiar la tabla
       const cleanTable = document.getElementById("clear-table");
       cleanTable.innerHTML = "";
 

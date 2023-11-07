@@ -1,10 +1,10 @@
 import { inventory } from "./products.js";
 
 export const totalInventario = () => {
-  const valorTotal = document.getElementById("valorTotal");
+  const totalValue = document.getElementById("totalValue");
   let precioTotal = 0;
   inventory.forEach((item) => {
     precioTotal += parseInt(item.cantidad) * parseFloat(item.precio);
   });
-  valorTotal.innerText = precioTotal.toLocaleString() + "€";
+  totalValue.innerText = precioTotal.toLocaleString() + "€";
 };

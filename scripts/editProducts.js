@@ -32,7 +32,7 @@ export const editProduct = (productId) => {
       cleanTable.innerHTML = "";
       listProducts();
 
-      //Resete campos
+      //Reset campos
 
       productNameInput.value = "";
       productQuantityInput.value = "";

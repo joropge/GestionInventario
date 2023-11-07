@@ -5,7 +5,7 @@ import { buscarPorNombre } from "./found.js";
 
 /**
  * Autor: Jorge Ordiz Perez(estudiante)
- * GitHub:
+ * GitHub:https://github.com/joropge/GestionInventario.git
  */
 
 document.addEventListener("DOMContentLoaded", listProducts);

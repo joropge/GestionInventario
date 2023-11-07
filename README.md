@@ -2,4 +2,4 @@
 
 **Autor**: Jorge Ordiz Perez
 
-**Github**:
+**Github**:https://github.com/joropge/GestionInventario.git
